@@ -31,7 +31,7 @@ namespace eCommerce.API.Middlewares
                 if (ex.InnerException != null)
                 {
                     //Log the inner exception type and message
-                    _logger.LogError($"{ex.InnerException.GetType().ToString()}: {ex.InnerException.Message}");
+                    _logger.LogError($"Error: {ex.InnerException.GetType().ToString()}: {ex.InnerException.Message}");
 
                     httpContext.Response.StatusCode = 500; //Internal server error
 

@@ -50,7 +50,11 @@ namespace eCommerce.Infrastructure.Repositories
             ApplicationUser? user = await _dbContext.DbConnection
                 .QueryFirstOrDefaultAsync<ApplicationUser>(query, param);
 
-            return user;
+            if (user != null)
+            {
+                return user;
+            }
+            return null;
         }
     }
 }
